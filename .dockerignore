@@ -1,0 +1,10 @@
+# Контекст сборки — корень репо; отсекаем всё лишнее, чтобы образ был чистым.
+**/node_modules
+**/dist
+.git
+.github
+scripts
+*.log
+.DS_Store
+.env
+.env.*

@@ -1,0 +1,9 @@
+# Single static frontend service for Dokploy. Domain + SSL (Let's Encrypt via
+# Dokploy's built-in Traefik) are configured in Dokploy, not here — Traefik
+# routes the domain to this service.
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
