@@ -35,3 +35,6 @@ Thumbs.db
 
 # Claude Code (share project settings, keep personal ones local)
 .claude/settings.local.json
+
+# Локальная память проекта — не выкладывать в публичный репо
+CLAUDE.md

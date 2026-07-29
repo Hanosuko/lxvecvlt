@@ -69,6 +69,7 @@ export const author = {
 
 export const tour = {
   url: 'https://coven-tour.ru/',
+  telegram: 'https://t.me/huzzybcoven',
   banner:
     'https://optim.tildacdn.com/tild3930-3861-4934-a262-633065386235/-/format/webp/photo.png.webp',
   poster:

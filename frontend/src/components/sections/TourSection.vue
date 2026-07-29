@@ -22,13 +22,23 @@ import { tour } from '@/data/links'
         decoding="async"
       />
 
-      <GlowButton
-        class="tour__cta"
-        :href="tour.url"
-        data-cursor="hover"
-      >
-        Билеты на тур
-      </GlowButton>
+      <div class="tour__actions">
+        <GlowButton
+          class="tour__cta"
+          :href="tour.url"
+          data-cursor="hover"
+        >
+          Купить билеты
+        </GlowButton>
+
+        <GlowButton
+          class="tour__tg"
+          :href="tour.telegram"
+          data-cursor="hover"
+        >
+          Телеграм тура
+        </GlowButton>
+      </div>
     </div>
   </section>
 </template>
@@ -76,5 +86,42 @@ import { tour } from '@/data/links'
 
 .tour__cta:hover {
   background: #97302a; /* чуть более тёмный красный */
+}
+
+/* Группа кнопок: билеты + телеграм стоят вплотную друг к другу (свой маленький
+   зазор), отдельно от общего большого gap блока тура. */
+.tour__actions {
+  width: 100%;
+  max-width: 40rem; /* == постер / кнопки */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Вторичная кнопка «Telegram тура» под билетами: тёмная (чтобы красная CTA
+   оставалась единственным красным акцентом), той же ширины и высоты, синеет на hover. */
+.tour__tg {
+  width: 100%;
+  max-width: 40rem; /* == .tour__cta */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 2.5rem; /* == .tour__cta — одинаковая высота */
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: var(--step-0);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  background: var(--fg);
+  color: var(--bg);
+  --glow: var(--bg);
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.tour__tg:hover {
+  background: #4768a2; /* синий Telegram-акцент вместо красного */
 }
 </style>
